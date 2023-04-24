@@ -24,11 +24,7 @@
 
  <p>画像</p>
 
-  <% if @user.image.attached? %>
-    <%= image_tag @user.image, size: "100x100" %>
-  <% else %>
-    <%= image_tag 'no_image', size: "100x100" %>
-  <% end %>
+ <%= image_tag current_user.get_profile_image(100,100) %>
 
   <table class="table">
 <tbody>
