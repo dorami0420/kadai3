@@ -20,12 +20,9 @@
 <% end %>
 
   <p>画像</p>
+<%= image_tag current_user.get_profile_image(100,100) %>
 
-  <% if @user.image.attached? %>
-    <%= image_tag @user.image, size: "100x100" %>
-  <% else %>
-    <%= image_tag 'no_image', size: "100x100" %>
-  <% end %>
+
 
 <table class="table">
 <tbody>
@@ -77,17 +74,13 @@
 
 <h3>Users</h3>
    <% @users.each do |user| %>
- <% if user.image.attached? %>
-  <p>image</p>
-<%= image_tag user.image, size: "100x100"%>
 
-  <% else %>
+<%= image_tag user.get_profile_image(100,100) %>
 
-  <p>image：<%= image_tag 'no_image', size: "100x100"%></p>
 
   <p>name</p>
 <%= user.name %>
-  <% end %>
+
 
 
 
